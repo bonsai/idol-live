@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "include_keywords": ["アイドル", "idol", "ライブ", "live", "フリーライブ", "無銭", "観覧無料"],
+  "exhibition_keywords": ["展示会", "展覧会", "美術展", "写真展", "作品展示", "展示", "exhibition", "museum"],
+  "free_keywords": ["無料", "0円", "￥0", "¥0", "フリーライブ", "無銭", "観覧無料"],
+  "nearby_window_days": 7,
+  "minimum_relevance_score": 2,
+  "exhibition_override_score": 3,
+  "rules": {
+    "exhibition_is_filtered_before_primary_dataset": true,
+    "nearby_candidates_are_separate_from_events": true,
+    "preserve_source_url_and_fetched_at": true
+  }
+}
