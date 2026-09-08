@@ -35,8 +35,16 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Prepare event data for Pages
+        run: |
+          mkdir -p public/.data
+          cp .data/events.json public/.data/events.json
+
       - name: Build
         run: npm run build
+
+      - name: Verify event data in build
+        run: test -f dist/.data/events.json
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
