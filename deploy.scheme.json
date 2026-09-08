@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/bonsai/idol-live/blob/main/deploy.scheme.json",
+  "title": "idol-live Deployment Scheme",
+  "description": "Deployment contract for the idol-live Vue application.",
+  "type": "object",
+  "required": ["platform", "build", "artifact", "trigger", "environment", "verification"],
+  "properties": {
+    "platform": {
+      "type": "string",
+      "const": "github-pages"
+    },
+    "build": {
+      "type": "object",
+      "required": ["tool", "command", "output"],
+      "properties": {
+        "tool": { "type": "string", "const": "vite" },
+        "command": { "type": "string", "const": "npm run build" },
+        "output": { "type": "string", "const": "dist" }
+      },
+      "additionalProperties": false
+    },
+    "artifact": {
+      "type": "object",
+      "required": ["source", "static"],
+      "properties": {
+        "source": { "type": "string", "const": "dist" },
+        "static": { "type": "boolean", "const": true }
+      },
+      "additionalProperties": false
+    },
+    "trigger": {
+      "type": "object",
+      "required": ["branches"],
+      "properties": {
+        "branches": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1
+        },
+        "manual": { "type": "boolean", "default": true }
+      },
+      "additionalProperties": false
+    },
+    "environment": {
+      "type": "object",
+      "required": ["data_root"],
+      "properties": {
+        "data_root": { "type": "string", "const": ".data" },
+        "base_path": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "verification": {
+      "type": "object",
+      "required": ["build", "data", "smoke"],
+      "properties": {
+        "build": { "type": "boolean", "const": true },
+        "data": { "type": "boolean", "const": true },
+        "smoke": { "type": "boolean", "const": true }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
