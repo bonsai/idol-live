@@ -1,0 +1,61 @@
+name: Validate event data
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.data/**'
+      - 'scripts/**'
+      - '.github/workflows/data.yml'
+  pull_request:
+    paths:
+      - '.data/**'
+      - 'scripts/**'
+      - '.github/workflows/data.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Validate JSON data
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          events = Path('.data/events.json')
+          data = json.loads(events.read_text(encoding='utf-8'))
+          if not isinstance(data, list):
+              raise SystemExit('events.json must be a JSON array')
+
+          for i, event in enumerate(data, 1):
+              for key in ('date', 'title', 'venue'):
+                  if not event.get(key):
+                      raise SystemExit(f'event #{i}: missing {key}')
+
+          print(f'validated {len(data)} events')
+          PY
+
+      - name: Validate research JSON
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          files = sorted(Path('.data').glob('research-*.json'))
+          for path in files:
+              json.loads(path.read_text(encoding='utf-8'))
+              print(f'validated {path}')
+          PY
