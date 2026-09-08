@@ -30,22 +30,24 @@ jobs:
           python-version: '3.x'
 
       - name: Validate JSON data
+        run: python scripts/events_db.py validate
+
+      - name: Build SQLite database
+        run: python scripts/events_db.py import
+
+      - name: SQLite smoke test
         run: |
           python - <<'PY'
-          import json
+          import sqlite3
           from pathlib import Path
 
-          events = Path('.data/events.json')
-          data = json.loads(events.read_text(encoding='utf-8'))
-          if not isinstance(data, list):
-              raise SystemExit('events.json must be a JSON array')
-
-          for i, event in enumerate(data, 1):
-              for key in ('date', 'title', 'venue'):
-                  if not event.get(key):
-                      raise SystemExit(f'event #{i}: missing {key}')
-
-          print(f'validated {len(data)} events')
+          db = sqlite3.connect('.data/events.db')
+          events = db.execute('select count(*) from events').fetchone()[0]
+          sources = db.execute('select count(*) from sources').fetchone()[0]
+          if events == 0:
+              raise SystemExit('SQLite database contains no events')
+          print(f'SQLite OK: {events} events, {sources} sources')
+          db.close()
           PY
 
       - name: Validate research JSON
@@ -54,8 +56,7 @@ jobs:
           import json
           from pathlib import Path
 
-          files = sorted(Path('.data').glob('research-*.json'))
-          for path in files:
+          for path in sorted(Path('.data').glob('research-*.json')):
               json.loads(path.read_text(encoding='utf-8'))
               print(f'validated {path}')
           PY
