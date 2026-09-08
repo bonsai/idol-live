@@ -1,5 +1,150 @@
 {
   "dataset": "idol_free_live",
   "period": {"from": "2026-09-14", "to": "2026-09-20"},
-  "events": []
+  "events": [
+    {
+      "date": "2026-09-15",
+      "start_at": "19:30",
+      "end_at": null,
+      "title": "LOVE CHANT グループ結成記念フリーライブツアー「歌うよ！LOVE CHANT」",
+      "artists": ["LOVE CHANT"],
+      "venue": "HMV&BOOKS SHIBUYA 5F イベントスペースB",
+      "area": "東京",
+      "admission": {"price": 0, "currency": "JPY", "label": "観覧無料"},
+      "free_status": {
+        "free": true,
+        "drink_required": false,
+        "reservation_required": false,
+        "conditions": ["優先入場は物販利用者向け", "整理番号付き入場券は先着配布"]
+      },
+      "source_url": "https://lovechant.fanpla.jp/news/detail/89412",
+      "fetched_at": "2026-09-08"
+    },
+    {
+      "date": "2026-09-15",
+      "start_at": "19:30",
+      "end_at": null,
+      "title": "Tohkei 定期公演「透景」フリーライブSP！",
+      "artists": ["Tohkei"],
+      "venue": "Spotify O-Crest",
+      "area": "東京",
+      "admission": {"price": 0, "currency": "JPY", "label": "通常チケット無料"},
+      "free_status": {
+        "free": true,
+        "drink_required": null,
+        "reservation_required": false,
+        "conditions": ["優先チケットあり", "通常チケットが無料"]
+      },
+      "source_url": "https://x.com/Tohkei_info/status/1960257357630837031",
+      "fetched_at": "2026-09-08"
+    },
+    {
+      "date": "2026-09-16",
+      "start_at": "17:00",
+      "end_at": null,
+      "title": "Lなん×リトシグ2MAN無銭ライブ！",
+      "artists": ["Lって何のLですか？", "LittleSignal"],
+      "venue": "秋葉原Galaxy",
+      "area": "東京",
+      "admission": {"price": 0, "currency": "JPY", "label": "一般無料"},
+      "free_status": {
+        "free": true,
+        "drink_required": true,
+        "reservation_required": false,
+        "conditions": ["優先入場3,000円", "一般0円", "ドリンク代別", "電話番号認証済みアカウントのみ申込可能"]
+      },
+      "source_url": "https://ticketdive.com/event/LnanLittlesig2MAN0916",
+      "fetched_at": "2026-09-08"
+    },
+    {
+      "date": "2026-09-18",
+      "start_at": "17:30",
+      "end_at": null,
+      "title": "小林愛香「BLUE MAGIC」発売記念フリーライブ",
+      "artists": ["小林愛香"],
+      "venue": "池袋・サンシャインシティ 噴水広場",
+      "area": "東京",
+      "admission": {"price": 0, "currency": "JPY", "label": "観覧無料"},
+      "free_status": {
+        "free": true,
+        "drink_required": false,
+        "reservation_required": false,
+        "conditions": ["優先観覧エリアは入場券が必要", "フリーエリアあり", "混雑時は入場規制の可能性あり"]
+      },
+      "source_url": "https://sunshinecity.jp/event/entry-38683.html",
+      "fetched_at": "2026-09-08"
+    },
+    {
+      "date": "2026-09-19",
+      "start_at": "13:00",
+      "end_at": null,
+      "title": "UNIVER23 フリーイベント ミニライブ＆特典会",
+      "artists": ["UNIVER23"],
+      "venue": "タワーレコード錦糸町パルコ店 5F 店内イベントスペース",
+      "area": "東京",
+      "admission": {"price": 0, "currency": "JPY", "label": "フリーイベント"},
+      "free_status": {
+        "free": true,
+        "drink_required": false,
+        "reservation_required": false,
+        "conditions": ["13:00 / 15:30の2部制", "対象商品購入で整理番号付き入場券・特典券を配布"]
+      },
+      "source_url": "https://cdfront.tower.jp/store/event/2026/09/1450919u",
+      "fetched_at": "2026-09-08"
+    },
+    {
+      "date": "2026-09-19",
+      "start_at": "17:25",
+      "end_at": "17:50",
+      "title": "Remember Girl’s Power !! 2026",
+      "artists": ["MyDearDarlin’"],
+      "venue": "池袋西口公園野外劇場グローバルリングシアター",
+      "area": "東京",
+      "admission": {"price": 0, "currency": "JPY", "label": "無料ライブ"},
+      "free_status": {
+        "free": true,
+        "drink_required": false,
+        "reservation_required": false,
+        "conditions": ["無料ライブ", "無料配信あり"]
+      },
+      "source_url": "https://idol.push.tokyo/schedule/44959/",
+      "fetched_at": "2026-09-08"
+    },
+    {
+      "date": "2026-09-19",
+      "start_at": "11:30",
+      "end_at": null,
+      "title": "無銭公演「アイフィク、はじめる？」",
+      "artists": ["このアイドルはフィクションです"],
+      "venue": "Shinjuku MARZ",
+      "area": "東京",
+      "admission": {"price": 0, "currency": "JPY", "label": "一般入場無料"},
+      "free_status": {
+        "free": true,
+        "drink_required": true,
+        "reservation_required": false,
+        "conditions": ["一般チケット0円", "ドリンク代600円別途", "前方チケットあり"]
+      },
+      "source_url": "https://ticketdive.com/event/20260919musen",
+      "fetched_at": "2026-09-08"
+    },
+    {
+      "date": "2026-09-20",
+      "start_at": "11:30",
+      "end_at": null,
+      "title": "ALLYOUNEEDS inc. Free Monthly Show「AYNs」vol.02",
+      "artists": ["SITUASION", "AFTERS", "DC"],
+      "venue": "新宿MARZ",
+      "area": "東京",
+      "admission": {"price": 0, "currency": "JPY", "label": "前売一般0円"},
+      "free_status": {
+        "free": true,
+        "drink_required": true,
+        "reservation_required": false,
+        "conditions": ["前売一般0円", "2ドリンク代1,200円別途", "当日一般1,000円"]
+      },
+      "source_url": "https://ticketdive.com/event/ALY_02",
+      "fetched_at": "2026-09-08"
+    }
+  ]
 }
