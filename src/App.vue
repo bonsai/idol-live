@@ -34,6 +34,8 @@ const priceText = (event) => {
   if (budget.admission_price === 0 && budget.drink_price == null) return '入場無料（料金要確認）'
   return event.admission?.label || '料金要確認'
 }
+
+const mapUrl = (event) => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${event.venue ?? ''} ${event.area ?? ''} 東京`)}`
 </script>
 
 <template>
@@ -41,7 +43,7 @@ const priceText = (event) => {
     <header>
       <p class="eyebrow">IDOL LIVE</p>
       <h1>東京の低予算・フリーライブ</h1>
-      <p class="lead">完全無料に限定せず、ドリンク込みで1,000円未満をゆるく発見。</p>
+      <p class="lead">気になるライブを日付・エリア・料金で探せます。</p>
     </header>
 
     <section class="filters" aria-label="検索条件">
@@ -49,6 +51,21 @@ const priceText = (event) => {
       <label>終了日<input v-model="to" type="date" /></label>
       <label>エリア<select v-model="area"><option value="">すべて</option><option v-for="item in areas" :key="item" :value="item">{{ item }}</option></select></label>
       <label class="check"><input v-model="underBudget" type="checkbox" /> 1,000円未満</label>
+    </section>
+
+    <section class="map-panel" aria-label="簡易地図">
+      <div class="map-heading">
+        <div>
+          <strong>簡易地図</strong>
+          <span>会場を地図で確認</span>
+        </div>
+        <a href="https://www.google.com/maps/search/?api=1&query=東京都" target="_blank" rel="noopener">東京全体 ↗</a>
+      </div>
+      <iframe
+        title="東京の簡易地図"
+        src="https://www.openstreetmap.org/export/embed.html?bbox=139.65%2C35.60%2C139.85%2C35.75&layer=mapnik"
+        loading="lazy"
+      ></iframe>
     </section>
 
     <p v-if="error" class="error">{{ error }}</p>
@@ -68,7 +85,10 @@ const priceText = (event) => {
             <span v-if="event.metadata?.confidence" class="badge muted">{{ event.metadata.confidence }}</span>
           </div>
           <p v-if="event.budget?.note" class="note">{{ event.budget.note }}</p>
-          <a v-if="event.source_url" :href="event.source_url" target="_blank" rel="noopener">情報源 ↗</a>
+          <div class="links">
+            <a v-if="event.source_url" :href="event.source_url" target="_blank" rel="noopener">情報源 ↗</a>
+            <a class="map-link" :href="mapUrl(event)" target="_blank" rel="noopener">📍 地図</a>
+          </div>
         </div>
       </article>
     </section>
