@@ -92,6 +92,10 @@ AW should treat the repository itself as the source of truth and generate action
 6. JSON fixtureだけでローカル動作確認できる
 7. PC / スマホの両方で閲覧できる
 
+## Deployment
+
+Vue + Vite を GitHub Pages の GitHub Actions から自動デプロイする。
+
 ## Planned structure
 
 ```text
