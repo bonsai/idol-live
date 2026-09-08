@@ -2,10 +2,10 @@
 import { computed, onMounted, ref } from 'vue'
 
 const data = ref({ period: {}, events: [] })
-const from = ref('2026-09-14')
+const from = ref('2026-09-09')
 const to = ref('2026-09-20')
 const area = ref('')
-const freeOnly = ref(true)
+const underBudget = ref(true)
 const error = ref('')
 
 onMounted(async () => {
@@ -20,27 +20,35 @@ onMounted(async () => {
 
 const events = computed(() => [...(data.value.events ?? [])]
   .filter((event) => !area.value || event.area === area.value)
-  .filter((event) => !freeOnly.value || event.free_status?.free === true)
+  .filter((event) => !underBudget.value || event.budget?.within_budget !== false)
   .filter((event) => !from.value || event.date >= from.value)
   .filter((event) => !to.value || event.date <= to.value)
   .sort((a, b) => `${a.date}${a.start_at ?? ''}`.localeCompare(`${b.date}${b.start_at ?? ''}`)))
 
 const areas = computed(() => [...new Set((data.value.events ?? []).map((e) => e.area).filter(Boolean))])
+
+const priceText = (event) => {
+  const budget = event.budget
+  if (!budget) return event.admission?.label || '料金要確認'
+  if (budget.total_price != null) return `${budget.total_price.toLocaleString()}円${budget.drink_included ? '（ドリンク込）' : ''}`
+  if (budget.admission_price === 0 && budget.drink_price == null) return '入場無料（料金要確認）'
+  return event.admission?.label || '料金要確認'
+}
 </script>
 
 <template>
   <main class="container">
     <header>
       <p class="eyebrow">IDOL LIVE</p>
-      <h1>東京の無銭・フリーライブ</h1>
-      <p class="lead">無料で行けるアイドルライブを、日付順にチェック。</p>
+      <h1>東京の低予算・フリーライブ</h1>
+      <p class="lead">完全無料に限定せず、ドリンク込みで1,000円未満をゆるく発見。</p>
     </header>
 
     <section class="filters" aria-label="検索条件">
       <label>開始日<input v-model="from" type="date" /></label>
       <label>終了日<input v-model="to" type="date" /></label>
       <label>エリア<select v-model="area"><option value="">すべて</option><option v-for="item in areas" :key="item" :value="item">{{ item }}</option></select></label>
-      <label class="check"><input v-model="freeOnly" type="checkbox" /> 完全無料</label>
+      <label class="check"><input v-model="underBudget" type="checkbox" /> 1,000円未満</label>
     </section>
 
     <p v-if="error" class="error">{{ error }}</p>
@@ -54,10 +62,12 @@ const areas = computed(() => [...new Set((data.value.events ?? []).map((e) => e.
           <p v-if="event.artists?.length" class="artists">{{ event.artists.join(' / ') }}</p>
           <p>{{ event.venue }}<span v-if="event.area"> · {{ event.area }}</span></p>
           <div class="badges">
-            <span class="badge">{{ event.admission?.label || '無料' }}</span>
-            <span v-if="event.free_status?.drink_required" class="badge muted">1Dあり</span>
+            <span class="badge">{{ priceText(event) }}</span>
+            <span v-if="event.free_status?.drink_required" class="badge muted">ドリンクあり</span>
             <span v-if="event.free_status?.reservation_required" class="badge muted">要予約</span>
+            <span v-if="event.metadata?.confidence" class="badge muted">{{ event.metadata.confidence }}</span>
           </div>
+          <p v-if="event.budget?.note" class="note">{{ event.budget.note }}</p>
           <a v-if="event.source_url" :href="event.source_url" target="_blank" rel="noopener">情報源 ↗</a>
         </div>
       </article>
@@ -67,6 +77,6 @@ const areas = computed(() => [...new Set((data.value.events ?? []).map((e) => e.
       <p>条件をゆるめるか、データを追加するとここに表示されます。</p>
     </section>
 
-    <footer>data: JSON fixture · fetched_at を含む一次データを正規データとして利用</footer>
+    <footer>data: JSON fixture · 料金・ドリンク・予約条件・確認日などのメタデータを保持</footer>
   </main>
 </template>
