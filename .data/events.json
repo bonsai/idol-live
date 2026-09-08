@@ -1,7 +1,111 @@
 {
   "dataset": "idol_free_live",
-  "period": {"from": "2026-09-14", "to": "2026-09-20"},
+  "period": {"from": "2026-09-09", "to": "2026-09-20"},
   "events": [
+    {
+      "date": "2026-09-09",
+      "start_at": "16:20",
+      "end_at": null,
+      "title": "NEO IDOLEGION FREELIVE Vol.141",
+      "artists": ["みらくる🌙ふぉーぜ-ZERO-", "煌きメリー☆ボップ", "羽田フリーク", "にゃんすきっ♡？", "ゎんみゅー♡？", "HEAVENLY", "シブヤDOMINION", "傾奇隊", "ココロモノローグ", "TJP", "神崎零", "ちあもあ！", "THAT's So", "奏音コレクト", "はいどーも！テラスマです！", "UniTia", "兎姫ちなみ", "8DOLL", "8ANGEL", "8WIZARD", "Tiara Palette", "FLORERISA"],
+      "venue": "新宿DHNoA",
+      "area": "東京",
+      "admission": {"price": 0, "currency": "JPY", "label": "一般0円"},
+      "free_status": {"free": true, "drink_required": true, "reservation_required": true, "conditions": ["一般0円", "1ドリンク700円別", "優先・最優先チケットあり"]},
+      "source_url": "https://ticketdive.com/event/idolegion141",
+      "fetched_at": "2026-09-08"
+    },
+    {
+      "date": "2026-09-10",
+      "start_at": "14:30",
+      "end_at": null,
+      "title": "#超無銭 @初台DOORS 1部",
+      "artists": ["AIBECK", "LEIWAN", "EMPATHY", "KAZALIN"],
+      "venue": "初台DOORS",
+      "area": "東京",
+      "admission": {"price": 0, "currency": "JPY", "label": "先行無料予約"},
+      "free_status": {"free": true, "drink_required": null, "reservation_required": true, "conditions": ["早割N ticketは0円", "通常N ticketは1,500円", "無料枠は先行予約"]},
+      "source_url": "https://tiget.net/events/520657",
+      "fetched_at": "2026-09-08"
+    },
+    {
+      "date": "2026-09-11",
+      "start_at": "17:00",
+      "end_at": null,
+      "title": "星合いのライラック無銭単独公演",
+      "artists": ["星合いのライラック"],
+      "venue": "五反田G3",
+      "area": "東京",
+      "admission": {"price": 0, "currency": "JPY", "label": "一般0円"},
+      "free_status": {"free": true, "drink_required": true, "reservation_required": true, "conditions": ["一般0円", "1D別", "前方2,000円"]},
+      "source_url": "https://ticketdive.com/event/0911g3",
+      "fetched_at": "2026-09-08"
+    },
+    {
+      "date": "2026-09-12",
+      "start_at": "12:30",
+      "end_at": null,
+      "title": "UNDO無銭四房 -其の2-",
+      "artists": ["UNDO"],
+      "venue": "CLUB CRAWL",
+      "area": "東京",
+      "admission": {"price": 0, "currency": "JPY", "label": "一般0円"},
+      "free_status": {"free": true, "drink_required": true, "reservation_required": true, "conditions": ["優先1,000円", "一般0円", "ドリンク代はチケット購入時に事前徴収"]},
+      "source_url": "https://livepocket.jp/e/ud_sono2",
+      "fetched_at": "2026-09-08"
+    },
+    {
+      "date": "2026-09-12",
+      "start_at": "17:10",
+      "end_at": null,
+      "title": "マリークラウン フリーライブイベント",
+      "artists": ["マリークラウン"],
+      "venue": "アーバンドック ららぽーと豊洲 シーサイドデッキメインステージ",
+      "area": "東京",
+      "admission": {"price": 0, "currency": "JPY", "label": "フリーライブ"},
+      "free_status": {"free": true, "drink_required": false, "reservation_required": false, "conditions": ["無料観覧イベント"]},
+      "source_url": "https://idol.rootteam.co.jp/events/8121",
+      "fetched_at": "2026-09-08"
+    },
+    {
+      "date": "2026-09-13",
+      "start_at": "13:30",
+      "end_at": null,
+      "title": "RE-GE 2nd Single 発売記念フリーライブツアー 東京・タワーレコード渋谷店",
+      "artists": ["RE-GE"],
+      "venue": "タワーレコード渋谷店9Fイベントスペース",
+      "area": "東京",
+      "admission": {"price": 0, "currency": "JPY", "label": "観覧フリー"},
+      "free_status": {"free": true, "drink_required": false, "reservation_required": false, "conditions": ["13:30 / 16:30の2部制", "優先観覧エリアあり", "対象商品予約で特典会参加可"]},
+      "source_url": "https://re-ge.com/schedule/item-592/",
+      "fetched_at": "2026-09-08"
+    },
+    {
+      "date": "2026-09-13",
+      "start_at": "10:15",
+      "end_at": null,
+      "title": "neOen pre. 無銭イベント Re: NeoEncount vol.4",
+      "artists": ["neOen", "きゅんぱに！", "wqwq"],
+      "venue": "中野坂上S.U.B",
+      "area": "東京",
+      "admission": {"price": 0, "currency": "JPY", "label": "一般0円"},
+      "free_status": {"free": true, "drink_required": true, "reservation_required": true, "conditions": ["前方3,000円", "一般0円", "1D別", "当日各1,000円アップ"]},
+      "source_url": "https://neoen.jp/",
+      "fetched_at": "2026-09-08"
+    },
+    {
+      "date": "2026-09-14",
+      "start_at": "19:30",
+      "end_at": "20:30",
+      "title": "SAISON『ド平日』無銭単独ライブ",
+      "artists": ["SAISON"],
+      "venue": "GRIT at Shibuya",
+      "area": "東京",
+      "admission": {"price": 0, "currency": "JPY", "label": "Aチケット0円"},
+      "free_status": {"free": true, "drink_required": true, "reservation_required": true, "conditions": ["Aチケット一般エリア0円", "入場時別途1ドリンク", "Sチケット2,000円"]},
+      "source_url": "https://ticketdive.com/event/0914_SAISON",
+      "fetched_at": "2026-09-08"
+    },
     {
       "date": "2026-09-15",
       "start_at": "19:30",
@@ -11,12 +115,7 @@
       "venue": "HMV&BOOKS SHIBUYA 5F イベントスペースB",
       "area": "東京",
       "admission": {"price": 0, "currency": "JPY", "label": "観覧無料"},
-      "free_status": {
-        "free": true,
-        "drink_required": false,
-        "reservation_required": false,
-        "conditions": ["優先入場は物販利用者向け", "整理番号付き入場券は先着配布"]
-      },
+      "free_status": {"free": true, "drink_required": false, "reservation_required": false, "conditions": ["優先入場あり", "整理番号付き入場券は先着配布"]},
       "source_url": "https://lovechant.fanpla.jp/news/detail/89412",
       "fetched_at": "2026-09-08"
     },
@@ -29,12 +128,7 @@
       "venue": "Spotify O-Crest",
       "area": "東京",
       "admission": {"price": 0, "currency": "JPY", "label": "通常チケット無料"},
-      "free_status": {
-        "free": true,
-        "drink_required": null,
-        "reservation_required": false,
-        "conditions": ["優先チケットあり", "通常チケットが無料"]
-      },
+      "free_status": {"free": true, "drink_required": null, "reservation_required": false, "conditions": ["優先チケットあり", "通常チケットが無料"]},
       "source_url": "https://x.com/Tohkei_info/status/1960257357630837031",
       "fetched_at": "2026-09-08"
     },
@@ -47,13 +141,21 @@
       "venue": "秋葉原Galaxy",
       "area": "東京",
       "admission": {"price": 0, "currency": "JPY", "label": "一般無料"},
-      "free_status": {
-        "free": true,
-        "drink_required": true,
-        "reservation_required": false,
-        "conditions": ["優先入場3,000円", "一般0円", "ドリンク代別", "電話番号認証済みアカウントのみ申込可能"]
-      },
+      "free_status": {"free": true, "drink_required": true, "reservation_required": false, "conditions": ["優先入場3,000円", "一般0円", "ドリンク代別", "電話番号認証済みアカウントのみ申込可能"]},
       "source_url": "https://ticketdive.com/event/LnanLittlesig2MAN0916",
+      "fetched_at": "2026-09-08"
+    },
+    {
+      "date": "2026-09-17",
+      "start_at": "17:45",
+      "end_at": null,
+      "title": "RE-GE 2nd Single 発売記念フリーライブツアー 東京・汐留シオサイト",
+      "artists": ["RE-GE"],
+      "venue": "汐留シオサイト地下歩道",
+      "area": "東京",
+      "admission": {"price": 0, "currency": "JPY", "label": "観覧フリー"},
+      "free_status": {"free": true, "drink_required": false, "reservation_required": false, "conditions": ["ミニライブ観覧フリー", "優先観覧エリアあり", "対象商品予約で特典会参加可"]},
+      "source_url": "https://re-ge.com/schedule/item-593/",
       "fetched_at": "2026-09-08"
     },
     {
@@ -65,12 +167,7 @@
       "venue": "池袋・サンシャインシティ 噴水広場",
       "area": "東京",
       "admission": {"price": 0, "currency": "JPY", "label": "観覧無料"},
-      "free_status": {
-        "free": true,
-        "drink_required": false,
-        "reservation_required": false,
-        "conditions": ["優先観覧エリアは入場券が必要", "フリーエリアあり", "混雑時は入場規制の可能性あり"]
-      },
+      "free_status": {"free": true, "drink_required": false, "reservation_required": false, "conditions": ["優先観覧エリアは入場券が必要", "フリーエリアあり"]},
       "source_url": "https://sunshinecity.jp/event/entry-38683.html",
       "fetched_at": "2026-09-08"
     },
@@ -83,12 +180,7 @@
       "venue": "タワーレコード錦糸町パルコ店 5F 店内イベントスペース",
       "area": "東京",
       "admission": {"price": 0, "currency": "JPY", "label": "フリーイベント"},
-      "free_status": {
-        "free": true,
-        "drink_required": false,
-        "reservation_required": false,
-        "conditions": ["13:00 / 15:30の2部制", "対象商品購入で整理番号付き入場券・特典券を配布"]
-      },
+      "free_status": {"free": true, "drink_required": false, "reservation_required": false, "conditions": ["13:00 / 15:30の2部制", "対象商品購入で整理番号付き入場券・特典券を配布"]},
       "source_url": "https://cdfront.tower.jp/store/event/2026/09/1450919u",
       "fetched_at": "2026-09-08"
     },
@@ -101,12 +193,7 @@
       "venue": "池袋西口公園野外劇場グローバルリングシアター",
       "area": "東京",
       "admission": {"price": 0, "currency": "JPY", "label": "無料ライブ"},
-      "free_status": {
-        "free": true,
-        "drink_required": false,
-        "reservation_required": false,
-        "conditions": ["無料ライブ", "無料配信あり"]
-      },
+      "free_status": {"free": true, "drink_required": false, "reservation_required": false, "conditions": ["無料ライブ", "無料配信あり"]},
       "source_url": "https://idol.push.tokyo/schedule/44959/",
       "fetched_at": "2026-09-08"
     },
@@ -119,12 +206,7 @@
       "venue": "Shinjuku MARZ",
       "area": "東京",
       "admission": {"price": 0, "currency": "JPY", "label": "一般入場無料"},
-      "free_status": {
-        "free": true,
-        "drink_required": true,
-        "reservation_required": false,
-        "conditions": ["一般チケット0円", "ドリンク代600円別途", "前方チケットあり"]
-      },
+      "free_status": {"free": true, "drink_required": true, "reservation_required": false, "conditions": ["一般チケット0円", "ドリンク代600円別途", "前方チケットあり"]},
       "source_url": "https://ticketdive.com/event/20260919musen",
       "fetched_at": "2026-09-08"
     },
@@ -137,12 +219,7 @@
       "venue": "新宿MARZ",
       "area": "東京",
       "admission": {"price": 0, "currency": "JPY", "label": "前売一般0円"},
-      "free_status": {
-        "free": true,
-        "drink_required": true,
-        "reservation_required": false,
-        "conditions": ["前売一般0円", "2ドリンク代1,200円別途", "当日一般1,000円"]
-      },
+      "free_status": {"free": true, "drink_required": true, "reservation_required": false, "conditions": ["前売一般0円", "2ドリンク代1,200円別途", "当日一般1,000円"]},
       "source_url": "https://ticketdive.com/event/ALY_02",
       "fetched_at": "2026-09-08"
     }
