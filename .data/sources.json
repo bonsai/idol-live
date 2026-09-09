@@ -1,3 +1,11 @@
 {
-  "sources": []
+  "sources": [
+    {
+      "url": "https://tiget.net/events/520061",
+      "label": "ワンブレンダーフリーライブ",
+      "scope": "idol_free_live",
+      "region": "福岡",
+      "added_at": "2026-09-09T14:53:03+09:00"
+    }
+  ]
 }
