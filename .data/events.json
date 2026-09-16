@@ -504,6 +504,18 @@
       },
       "source_url": "https://ticketdive.com/event/ALY_02",
       "fetched_at": "2026-09-08"
+    },
+    {
+      "date": "2026-9-5",
+      "title": "ワンブレンダーフリーライブ のチケット購入・予約は TIGET から 基本利用無料のチケット販売システム TIGET チゲット イベントを探す チケット利用ガイド 販売者向け 新規会員登録 ログイン 基本利用無料のチケット販売システム TIGET チゲット イベントを探す チケット利用ガイド 販売者向け 新規会員登録 ",
+      "admission": {
+        "price": 0,
+        "free": true,
+        "drink_required": false,
+        "reservation_required": true
+      },
+      "source_url": "https://tiget.net/events/520061",
+      "fetched_at": "2026-09-16T04:48:43.570037+00:00"
     }
   ]
 }
