@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-09-08",
+  "checked_at": "2026-09-17",
   "scope": "東京アイドル・低予算/フリーライブ 2026-09-09〜2026-09-20",
   "policy": {
     "target_total_price_jpy": 1000,
@@ -7,6 +7,24 @@
     "unknown_price_kept": true
   },
   "candidates": [
+    {
+      "date": "2026-09-17",
+      "start_at": "17:20",
+      "title": "無銭ぷろじぇくと!! vol.105",
+      "venue": "GOTANDA G6",
+      "area": "東京",
+      "admission_price": 0,
+      "drink_price": null,
+      "total_price": null,
+      "drink_included": false,
+      "within_budget": true,
+      "confidence": "確認済み",
+      "source_type": "公式イベントページ",
+      "checked_at": "2026-09-17",
+      "tags": ["無銭", "フリーライブ", "GOTANDA G6"],
+      "note": "通常エリア0円。前方エリア2,000円。当日各種+1,000円。別途2ドリンク。再入場無料。開場17:00、開演17:20。",
+      "source_url": "https://paylove.org/idols/83"
+    },
     {
       "date": "2026-09-19",
       "start_at": "09:50",
@@ -45,6 +63,7 @@
   ],
   "research_notes": [
     "NEO IDOLEGION FREELIVE Vol.141は一般0円+1D700円で合計700円を確認済み。",
-    "全国アイドルライブ検索サイトでも9/9〜9/20のイベント横断検索が可能。"
+    "全国アイドルライブ検索サイトでも9/9〜9/20のイベント横断検索が可能。",
+    "2026-09-17にPaylove公式イベントページで無銭ぷろじぇくと!! vol.105（GOTANDA G6、通常エリア0円、別途2ドリンク、17:00/17:20）を確認。"
   ]
 }
