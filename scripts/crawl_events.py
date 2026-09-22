@@ -64,34 +64,66 @@ def normalize(text: str, url: str, fetched_at: str) -> dict:
     }
 
 
+def extract_links(source_url: str, body: str, source_kind: str | None) -> list[str]:
+    """Discover event/detail pages from source indexes without assuming a private API."""
+    links = []
+    for href in re.findall(r'href=["\\\']([^"\\\']+)["\\\']', body, flags=re.I):
+        absolute = urljoin(source_url, html.unescape(href))
+        if source_kind == "livepocket" and "/e/" in absolute:
+            links.append(absolute.split("#", 1)[0])
+        elif source_kind == "paylove" and "paylove.org/" in absolute and absolute.rstrip("/") != "https://paylove.org":
+            links.append(absolute.split("#", 1)[0])
+    return list(dict.fromkeys(links))
+
+
 def main() -> int:
     DATA.mkdir(exist_ok=True)
     now = datetime.now(timezone.utc).isoformat()
     existing = json.loads(EVENTS.read_text(encoding="utf-8")) if EVENTS.exists() else {"dataset": "idol_free_live", "events": []}
     auxiliary = {"dataset": "idol_free_live_auxiliary", "generated_at": now, "candidates": []}
 
-    sources = []
     sources_file = DATA / "sources.json"
-    if sources_file.exists():
-        sources = json.loads(sources_file.read_text(encoding="utf-8")).get("sources", [])
+    sources = json.loads(sources_file.read_text(encoding="utf-8")).get("sources", []) if sources_file.exists() else []
 
+    queue = []
     for source in sources:
         url = source.get("url")
-        if not url:
+        if url:
+            queue.append((url, source.get("source_kind")))
+
+    seen = set()
+    for url, source_kind in queue:
+        if url in seen:
             continue
+        seen.add(url)
         try:
             body = fetch(url)
             text = text_from_html(body)
+
+            # Index pages from LivePocket / PayLove are discovery roots.
+            discovered = extract_links(url, body, source_kind)
+            if source_kind in {"livepocket", "paylove"}:
+                for link in discovered[:100]:
+                    if link not in seen:
+                        queue.append((link, source_kind))
+
             kind = classify(text)
             item = normalize(text, url, now)
-            if kind == "idol_live":
+            item["source_kind"] = source_kind or "generic"
+
+            # A source index is not itself an event; only event/detail pages enter the dataset.
+            is_event_page = (
+                (source_kind == "livepocket" and "/e/" in url)
+                or (source_kind == "paylove" and url.rstrip("/") != "https://paylove.org")
+                or source_kind is None
+            )
+            if kind == "idol_live" and is_event_page:
                 existing.setdefault("events", []).append(item)
-            elif kind == "nearby":
-                item["reason"] = "low-confidence-or-related"
+            elif kind in {"idol_live", "nearby"}:
+                item["reason"] = "discovered-source-page"
                 auxiliary["candidates"].append(item)
-            # Exhibition candidates are deliberately not written to the primary dataset.
-        except Exception as exc:  # keep one bad source from aborting the crawl
-            auxiliary["candidates"].append({"source_url": url, "error": str(exc), "fetched_at": now})
+        except Exception as exc:
+            auxiliary["candidates"].append({"source_url": url, "source_kind": source_kind, "error": str(exc), "fetched_at": now})
 
     dedup = {}
     for event in existing.get("events", []):
