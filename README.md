@@ -15,6 +15,18 @@
 - JSONを正規データとして保持し、VueはJSON/APIを表示する
 - 情報源URLと取得日時を追跡できる
 
+### Event sources
+
+無銭・フリーライブの探索対象として、以下のチケット／イベント情報源を扱う。
+
+- LivePocket — https://livepocket.jp/
+  - ファン・アイドルカテゴリを含むイベント検索・チケット情報
+  - 0円チケットやフリーライブも候補として収集する
+- PayLove — https://paylove.org/
+  - アイドルライブイベント情報・チケット条件を収集する
+
+各イベントは必ず `source_url` と `fetched_at` を保持し、無料条件・ドリンク代・予約条件を分離して記録する。
+
 ### Domain model
 
 ```text
