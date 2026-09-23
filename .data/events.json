@@ -515,7 +515,21 @@
         "reservation_required": true
       },
       "source_url": "https://tiget.net/events/520061",
-      "fetched_at": "2026-09-16T04:48:43.570037+00:00"
+      "fetched_at": "2026-09-23T04:44:49.258303+00:00",
+      "source_kind": "generic"
+    },
+    {
+      "date": null,
+      "title": "名古屋港 × アイドルDAY｜NAGOYA PORT FES 2026 みなとスポーツ広場会場 - 築地口商店街 内容をスキップ 築地口商店街 TOP 加盟店一覧 イベント情報 お問い合わせ 名古屋港 × アイドルDAY｜NAGOYA PORT FES 2026 みなとスポーツ広場会場 ← NAGOYA PORT FE",
+      "admission": {
+        "price": 0,
+        "free": true,
+        "drink_required": false,
+        "reservation_required": false
+      },
+      "source_url": "https://tsukijiguchi-shotengai.jp/event/minato/idol-day/",
+      "fetched_at": "2026-09-23T04:44:49.258303+00:00",
+      "source_kind": "generic"
     }
   ]
 }
